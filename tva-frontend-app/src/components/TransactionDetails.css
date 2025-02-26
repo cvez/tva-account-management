@@ -1,0 +1,30 @@
+.transaction-details {
+  padding: 20px;
+}
+
+.transaction-details h1 {
+  text-align: center;
+}
+
+.transaction-details input {
+  display: block;
+  padding: 10px;
+  width: calc(100% - 22px);
+  margin-bottom: 20px;
+}
+
+.transaction-details button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.transaction-details button:hover {
+  background-color: #218838;
+}
+
+.transaction-details p {
+  font-weight: bold;
+}

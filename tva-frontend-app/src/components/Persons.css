@@ -1,0 +1,31 @@
+.persons {
+  padding: 20px;
+}
+
+.persons h1 {
+  text-align: center;
+}
+
+.persons input {
+  padding: 10px;
+  width: calc(100% - 22px);
+  margin-bottom: 20px;
+}
+
+.persons ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.persons li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+}
+
+.persons li button {
+  margin-left: 10px;
+}

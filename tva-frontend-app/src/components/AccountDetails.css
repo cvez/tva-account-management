@@ -1,0 +1,48 @@
+.account-details {
+  padding: 20px;
+}
+
+.account-details h1 {
+  text-align: center;
+}
+
+.account-details input {
+  display: block;
+  padding: 10px;
+  width: calc(100% - 22px);
+  margin-bottom: 20px;
+}
+
+.account-details button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.account-details button:hover {
+  background-color: #218838;
+}
+
+.account-details p {
+  font-weight: bold;
+}
+
+.account-details ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.account-details li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+}
+
+.account-details li button {
+  margin-left: 10px;
+}
