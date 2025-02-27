@@ -1,0 +1,6 @@
+@TvaBackend_HostAddress = http://localhost:5105
+
+GET {{TvaBackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
