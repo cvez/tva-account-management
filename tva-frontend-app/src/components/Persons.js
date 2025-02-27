@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import api from '../services/api';
+import { fetchPersons, deletePerson } from '../services/api';
 import './Persons.css';
 
 function Persons() {
@@ -9,13 +9,13 @@ function Persons() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetchPersons();
+    fetchAllPersons();
   }, []);
 
-  const fetchPersons = async () => {
+  const fetchAllPersons = async () => {
     try {
-      const response = await api.get('/persons');
-      setPersons(response.data);
+      const data = await fetchPersons();
+      setPersons(data);
     } catch (error) {
       console.error('Error fetching persons:', error);
     }
@@ -40,8 +40,8 @@ function Persons() {
       return;
     }
     try {
-      await api.delete(`/persons/${id}`);
-      fetchPersons();
+      await deletePerson(id);
+      fetchAllPersons();
     } catch (error) {
       console.error('Error deleting person:', error);
     }
@@ -61,7 +61,7 @@ function Persons() {
           .filter(person =>
             person.id.includes(searchTerm) ||
             person.surname.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            person.accountNumber.includes(searchTerm)
+            person.accounts.some(account => account.accountNumber.includes(searchTerm))
           )
           .map(person => (
             <li key={person.id}>

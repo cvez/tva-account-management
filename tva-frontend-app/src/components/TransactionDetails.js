@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import api from '../services/api';
+import { fetchTransactionById, addTransaction, updateTransaction } from '../services/api';
 import './TransactionDetails.css';
 
 function TransactionDetails() {
@@ -20,8 +20,8 @@ function TransactionDetails() {
 
   const fetchTransactionDetails = useCallback(async () => {
     try {
-      const response = await api.get(`/transactions/${id}`);
-      setTransaction({ ...response.data, date: new Date(response.data.date) });
+      const data = await fetchTransactionById(id);
+      setTransaction({ ...data, date: new Date(data.date) });
     } catch (error) {
       console.error('Error fetching transaction details:', error);
     }
@@ -60,9 +60,9 @@ function TransactionDetails() {
 
     try {
       if (id === 'new') {
-        await api.post('/transactions', transaction);
+        await addTransaction(transaction);
       } else {
-        await api.put(`/transactions/${id}`, transaction);
+        await updateTransaction(id, transaction);
       }
       navigate(`/accounts/${transaction.accountId}`);
     } catch (error) {

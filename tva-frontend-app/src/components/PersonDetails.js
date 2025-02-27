@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import api from '../services/api';
+import { fetchPersonById, fetchPersons, addPerson, updatePerson } from '../services/api';
 import './PersonDetails.css';
 
 function PersonDetails() {
@@ -17,17 +17,17 @@ function PersonDetails() {
 
   const fetchPersonDetails = useCallback(async () => {
     try {
-      const response = await api.get(`/persons/${id}`);
-      setPerson(response.data);
+      const data = await fetchPersonById(id);
+      setPerson(data);
     } catch (error) {
       console.error('Error fetching person details:', error);
     }
   }, [id]);
 
-  const fetchPersons = useCallback(async () => {
+  const fetchAllPersons = useCallback(async () => {
     try {
-      const response = await api.get('/persons');
-      setPersons(response.data);
+      const data = await fetchPersons();
+      setPersons(data);
     } catch (error) {
       console.error('Error fetching persons:', error);
     }
@@ -37,8 +37,8 @@ function PersonDetails() {
     if (id !== 'new') {
       fetchPersonDetails();
     }
-    fetchPersons();
-  }, [id, fetchPersonDetails, fetchPersons]);
+    fetchAllPersons();
+  }, [id, fetchPersonDetails, fetchAllPersons]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -58,9 +58,9 @@ function PersonDetails() {
 
     try {
       if (id === 'new') {
-        await api.post('/persons', person);
+        await addPerson(person);
       } else {
-        await api.put(`/persons/${id}`, person);
+        await updatePerson(id, person);
       }
       navigate('/persons');
     } catch (error) {
