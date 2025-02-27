@@ -1,0 +1,185 @@
+@CustomerManagementAPI_HostAddress = http://localhost:5047
+
+### AccountsController Endpoints
+
+# Get all accounts
+GET {{CustomerManagementAPI_HostAddress}}/api/accounts
+Accept: application/json
+
+###
+
+# Get account by ID
+GET {{CustomerManagementAPI_HostAddress}}/api/accounts/1
+Accept: application/json
+
+###
+
+# Add a new account
+POST {{CustomerManagementAPI_HostAddress}}/api/accounts
+Content-Type: application/json
+
+{
+  "code": 1,
+  "personCode": 1,
+  "accountNumber": "123456789",
+  "outstandingBalance": 100.0,
+  "person": {
+    "code": 1,
+    "name": "John",
+    "surname": "Doe",
+    "idNumber": "1234567890"
+  },
+  "transactions": []
+}
+
+###
+
+# Update an account
+PUT {{CustomerManagementAPI_HostAddress}}/api/accounts/1
+Content-Type: application/json
+
+{
+  "code": 1,
+  "personCode": 1,
+  "accountNumber": "987654321",
+  "outstandingBalance": 200.0,
+  "person": {
+    "code": 1,
+    "name": "John",
+    "surname": "Doe",
+    "idNumber": "1234567890"
+  },
+  "transactions": []
+}
+
+###
+
+# Delete an account
+DELETE {{CustomerManagementAPI_HostAddress}}/api/accounts/1
+Accept: application/json
+
+###
+
+### TransactionsController Endpoints
+
+# Get all transactions
+GET {{CustomerManagementAPI_HostAddress}}/api/transactions
+Accept: application/json
+
+###
+
+# Get transaction by ID
+GET {{CustomerManagementAPI_HostAddress}}/api/transactions/1
+Accept: application/json
+
+###
+
+# Add a new transaction
+POST {{CustomerManagementAPI_HostAddress}}/api/transactions
+Content-Type: application/json
+
+{
+  "code": 1,
+  "accountCode": 1,
+  "transactionDate": "2025-02-22T00:00:00",
+  "captureDate": "2025-02-22T00:00:00",
+  "amount": 50.0,
+  "description": "Test transaction",
+  "account": {
+    "code": 1,
+    "personCode": 1,
+    "accountNumber": "123456789",
+    "outstandingBalance": 100.0,
+    "person": {
+      "code": 1,
+      "name": "John",
+      "surname": "Doe",
+      "idNumber": "1234567890"
+    },
+    "transactions": []
+  }
+}
+
+###
+
+# Update a transaction
+PUT {{CustomerManagementAPI_HostAddress}}/api/transactions/1
+Content-Type: application/json
+
+{
+  "code": 1,
+  "accountCode": 1,
+  "transactionDate": "2025-02-22T00:00:00",
+  "captureDate": "2025-02-22T00:00:00",
+  "amount": 75.0,
+  "description": "Updated transaction",
+  "account": {
+    "code": 1,
+    "personCode": 1,
+    "accountNumber": "123456789",
+    "outstandingBalance": 100.0,
+    "person": {
+      "code": 1,
+      "name": "John",
+      "surname": "Doe",
+      "idNumber": "1234567890"
+    },
+    "transactions": []
+  }
+}
+
+###
+
+# Delete a transaction
+DELETE {{CustomerManagementAPI_HostAddress}}/api/transactions/1
+Accept: application/json
+
+###
+
+### PersonsController Endpoints
+
+# Get all persons
+GET {{CustomerManagementAPI_HostAddress}}/api/persons
+Accept: application/json
+
+###
+
+# Get person by ID
+GET {{CustomerManagementAPI_HostAddress}}/api/persons/1
+Accept: application/json
+
+###
+
+# Add a new person
+POST {{CustomerManagementAPI_HostAddress}}/api/persons
+Content-Type: application/json
+
+{
+  "code": 1,
+  "name": "John",
+  "surname": "Doe",
+  "idNumber": "1234567890",
+  "accounts": []
+}
+
+###
+
+# Update a person
+PUT {{CustomerManagementAPI_HostAddress}}/api/persons/1
+Content-Type: application/json
+
+{
+  "code": 1,
+  "name": "John",
+  "surname": "Doe",
+  "idNumber": "1234567890",
+  "accounts": []
+}
+
+###
+
+# Delete a person
+DELETE {{CustomerManagementAPI_HostAddress}}/api/persons/1
+Accept: application/json
+
+###
