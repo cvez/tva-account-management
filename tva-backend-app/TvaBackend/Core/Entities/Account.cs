@@ -24,7 +24,7 @@ namespace Core.Entities
         public int PersonCode { get; set; }
 
         [ForeignKey("PersonCode")]
-        public required Person Person { get; set; }
+        public  Person? Person { get; set; }
 
         public required ICollection<Transaction> Transactions { get; set; }
     }
