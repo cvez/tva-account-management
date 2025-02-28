@@ -42,3 +42,8 @@
 .person-details li button {
   margin-left: 10px;
 }
+.message {
+  color: green;
+  font-weight: bold;
+  margin-bottom: 16px;
+}

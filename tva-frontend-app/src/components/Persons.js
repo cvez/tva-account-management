@@ -59,9 +59,9 @@ function Persons() {
       <ul>
         {persons
           .filter(person =>
-            person.id.includes(searchTerm) ||
-            person.surname.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            person.accounts.some(account => account.accountNumber.includes(searchTerm))
+            person.id?.includes(searchTerm) ||
+            person.surname?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            (person.accounts && person.accounts.some(account => account.accountNumber.includes(searchTerm)))
           )
           .map(person => (
             <li key={person.id}>

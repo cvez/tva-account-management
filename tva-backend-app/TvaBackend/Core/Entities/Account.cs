@@ -15,12 +15,15 @@ namespace Core.Entities
         public int Code { get; set; }
 
         [Required]
+        [Column("account_number")]
         public required string AccountNumber { get; set; }
 
         [Required]
+        [Column("outstanding_balance")]
         public decimal OutstandingBalance { get; set; }
 
         [Required]
+        [Column("person_code")]
         public int PersonCode { get; set; }
 
         [ForeignKey("PersonCode")]

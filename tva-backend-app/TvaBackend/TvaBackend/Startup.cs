@@ -38,6 +38,16 @@ namespace WebAPI
             services.AddSwaggerGen();
 
             services.AddMvc().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<PersonValidator>());
+
+            // Add CORS policy
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllOrigins",
+                    builder => builder
+                        .AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader());
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -50,6 +60,9 @@ namespace WebAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            // Use CORS policy
+            app.UseCors("AllowAllOrigins");
 
             app.UseAuthorization();
 

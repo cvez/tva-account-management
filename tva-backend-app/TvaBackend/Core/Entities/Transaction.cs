@@ -14,18 +14,23 @@ namespace Core.Entities
         public int Code { get; set; }
 
         [Required]
+        [Column("description")]
         public required string Description { get; set; }
 
         [Required]
+        [Column("amount")]
         public decimal Amount { get; set; }
 
         [Required]
+        [Column("transaction_date")]
         public DateTime TransactionDate { get; set; }
 
         [Required]
+        [Column("capture_date")]
         public DateTime CaptureDate { get; set; }
 
         [Required]
+        [Column("account_code")]
         public int AccountCode { get; set; }
 
         [ForeignKey("AccountCode")]

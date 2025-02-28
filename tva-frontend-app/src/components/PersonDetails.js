@@ -14,6 +14,7 @@ function PersonDetails() {
     accounts: []
   });
   const [persons, setPersons] = useState([]);
+  const [message, setMessage] = useState('');
 
   const fetchPersonDetails = useCallback(async () => {
     try {
@@ -59,8 +60,10 @@ function PersonDetails() {
     try {
       if (id === 'new') {
         await addPerson(person);
+        setMessage('New person has been created successfully!');
       } else {
         await updatePerson(id, person);
+        setMessage('Person details have been updated successfully!');
       }
       navigate('/persons');
     } catch (error) {
@@ -75,6 +78,7 @@ function PersonDetails() {
   return (
     <div className="person-details">
       <h1>Person Details</h1>
+      {message && <p className="message">{message}</p>}
       <input
         type="text"
         name="idNumber"
