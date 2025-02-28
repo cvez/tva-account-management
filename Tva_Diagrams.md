@@ -1,5 +1,6 @@
 ## Diagrams
 The following diagrams provide a visual representation of the system:
+NB drop in browser for rich rendering if you dont have the mermaid extension installed or the vscode preview not displaying diagrams.
 
 ### Architecture Diagram
 The architecture diagram illustrates the interaction between the React frontend, the API server, and the database. The React application communicates with the API server via REST API calls, and the API server interacts with the database using SQL queries.
