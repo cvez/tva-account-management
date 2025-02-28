@@ -1,55 +1,58 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 20vh;
+  background-color: #4a90e2;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 20px;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.language-selector {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #ff6f61;
 }
 
 .App-nav {
-  background-color: #333;
-  overflow: hidden;
+  background-color: #343a40;
+  padding: 10px;
 }
 
 .App-nav ul {
   list-style-type: none;
-  margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .App-nav li {
-  margin: 0 15px;
+  margin-right: 20px;
 }
 
-.App-nav li a {
-  display: block;
+.App-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.App-nav a:hover {
+  text-decoration: underline;
+}
+
+.App-footer {
+  background-color: #343a40;
   color: white;
   text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
-}
-
-.App-nav li a:hover {
-  background-color: #111;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }

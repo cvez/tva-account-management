@@ -1,15 +1,18 @@
 .persons {
   padding: 20px;
+  background-color: #f4f4f4;
+  min-height: 80vh;
 }
 
 .persons h1 {
-  text-align: center;
+  color: #4a90e2;
 }
 
 .persons input {
-  padding: 10px;
-  width: calc(100% - 22px);
   margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .persons ul {
@@ -19,13 +22,43 @@
 
 .persons li {
   display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: #fff;
+  align-items: center;
   margin-bottom: 10px;
+  padding: 10px;
+  background-color: white;
   border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
-.persons li button {
+.persons button {
   margin-left: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.persons button:hover {
+  opacity: 0.8;
+}
+
+.persons .btn-edit {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.persons .btn-delete {
+  background-color: #f44336;
+  color: white;
+}
+
+.persons .btn-accounts {
+  background-color: #2196F3;
+  color: white;
+}
+
+.persons button.create {
+  margin-top: 20px;
+  background-color: #4a90e2;
+  color: white;
 }

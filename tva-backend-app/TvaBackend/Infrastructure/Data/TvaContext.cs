@@ -24,6 +24,7 @@ namespace Infrastructure.Data
             modelBuilder.Entity<Transaction>().ToTable("Transactions");
 
             modelBuilder.Entity<Transaction>(ConfigureTransaction);
+            modelBuilder.Entity<Account>(ConfigureAccount);
         }
 
         private void ConfigureTransaction(EntityTypeBuilder<Transaction> builder)
@@ -34,6 +35,15 @@ namespace Infrastructure.Data
             builder.Property(t => t.CaptureDate).HasColumnName("capture_date").HasColumnType("datetime2(7)");
             builder.Property(t => t.Amount).HasColumnName("amount").HasColumnType("decimal(18, 2)");
             builder.Property(t => t.Description).HasColumnName("description").HasColumnType("text");
+        }
+
+        private void ConfigureAccount(EntityTypeBuilder<Account> builder)
+        {
+            builder.Property(a => a.Code).HasColumnName("code");
+            builder.Property(a => a.AccountNumber).HasColumnName("account_number").IsRequired();
+            builder.Property(a => a.OutstandingBalance).HasColumnName("outstanding_balance").HasColumnType("decimal(18, 2)").IsRequired();
+            builder.Property(a => a.PersonCode).HasColumnName("person_code").IsRequired();
+            builder.HasOne(a => a.Person).WithMany(p => p.Accounts).HasForeignKey(a => a.PersonCode);
         }
     }
 }

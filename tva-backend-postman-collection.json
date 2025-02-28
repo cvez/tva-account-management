@@ -1,0 +1,372 @@
+{
+  "info": {
+    "name": "TVA Account Management API",
+    "description": "Postman collection for the TVA Account Management backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Persons",
+      "item": [
+        {
+          "name": "Get All Persons",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5105/api/Persons",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5105",
+              "path": [
+                "api",
+                "Persons"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Person by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5105/api/Persons/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5105",
+              "path": [
+                "api",
+                "Persons",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Person",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"Name\": \"John Doe\", \"Age\": 30}"
+            },
+            "url": {
+              "raw": "http://localhost:5105/api/Persons",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5105",
+              "path": [
+                "api",
+                "Persons"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Person",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"Id\": 1, \"Name\": \"John Doe Updated\", \"Age\": 31}"
+            },
+            "url": {
+              "raw": "http://localhost:5105/api/Persons/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5105",
+              "path": [
+                "api",
+                "Persons",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Person",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5105/api/Persons/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5105",
+              "path": [
+                "api",
+                "Persons",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Accounts",
+      "item": [
+        {
+          "name": "Get All Accounts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5105/api/Accounts",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5105",
+              "path": [
+                "api",
+                "Accounts"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Account by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5105/api/Accounts/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5105",
+              "path": [
+                "api",
+                "Accounts",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Account",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"AccountNumber\": \"1234567890\", \"OutstandingBalance\": 1000.50, \"PersonCode\": 1}"
+            },
+            "url": {
+              "raw": "http://localhost:5105/api/Accounts",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5105",
+              "path": [
+                "api",
+                "Accounts"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Account",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"Code\": 1, \"AccountNumber\": \"1234567890\", \"OutstandingBalance\": 2000.75, \"PersonCode\": 1}"
+            },
+            "url": {
+              "raw": "http://localhost:5105/api/Accounts/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5105",
+              "path": [
+                "api",
+                "Accounts",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Account",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5105/api/Accounts/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5105",
+              "path": [
+                "api",
+                "Accounts",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Transactions",
+      "item": [
+        {
+          "name": "Get All Transactions",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5105/api/Transactions",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5105",
+              "path": [
+                "api",
+                "Transactions"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Transaction by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5105/api/Transactions/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5105",
+              "path": [
+                "api",
+                "Transactions",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Transaction",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"AccountCode\": 1, \"TransactionDate\": \"2025-02-28T00:00:00\", \"CaptureDate\": \"2025-02-28T00:00:00\", \"Amount\": 500.00, \"Description\": \"Test Transaction\"}"
+            },
+            "url": {
+              "raw": "http://localhost:5105/api/Transactions",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5105",
+              "path": [
+                "api",
+                "Transactions"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Transaction",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"Code\": 1, \"AccountCode\": 1, \"TransactionDate\": \"2025-02-28T00:00:00\", \"CaptureDate\": \"2025-02-28T00:00:00\", \"Amount\": 600.00, \"Description\": \"Updated Transaction\"}"
+            },
+            "url": {
+              "raw": "http://localhost:5105/api/Transactions/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5105",
+              "path": [
+                "api",
+                "Transactions",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Transaction",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5105/api/Transactions/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5105",
+              "path": [
+                "api",
+                "Transactions",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

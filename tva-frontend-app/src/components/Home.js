@@ -1,11 +1,11 @@
 import React from 'react';
 import './Home.css';
 
-function Home() {
+const Home = () => {
   return (
     <div className="home">
-      <h1>Welcome to the Account Management Application</h1>
-      <p>This application allows you to manage people, their accounts, and transactions.</p>
+      <h1>Welcome to Our Account Management Application</h1>
+      <p>Manage your accounts with ease and efficiency.</p>
     </div>
   );
 }
